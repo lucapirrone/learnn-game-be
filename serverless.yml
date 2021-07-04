@@ -4,6 +4,7 @@ provider:
   name: aws
   runtime: nodejs12.x
   stage: ${opt:stage, 'dev'}
+  region: eu-central-1
   logs:
     restApi: true
   environment:
