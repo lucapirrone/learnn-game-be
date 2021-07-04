@@ -1,0 +1,27 @@
+service: learnn-game-be
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  environment:
+    NODE_ENV: ${self:provider.stage}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  createGame:
+    handler: app/handler.createGame
+    events:
+      - http:
+          path: games
+          method: post
+
+  findAllGames:
+    handler: app/handler.findAllGames
+    events:
+      - http:
+          path: games
+          method: get
