@@ -23,6 +23,11 @@ class Result {
   bodyToString () {
     return {
       statusCode: this.statusCode,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Methods': '*',
+        'Access-Control-Allow-Origin': '*'
+      },
       body: JSON.stringify({
         code: this.code,
         message: this.message,
