@@ -16,6 +16,7 @@ functions:
     handler: app/handler.createGame
     events:
       - http:
+          cors: true
           path: games
           method: post
 
@@ -23,5 +24,6 @@ functions:
     handler: app/handler.findAllGames
     events:
       - http:
+          cors: true
           path: games
           method: get
