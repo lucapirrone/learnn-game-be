@@ -1,4 +1,4 @@
-import { CreateGameDTO } from '../model/dto/createGameDTO';
+import {CreateGameDTO} from '../model/dto/createGameDTO';
 import {GamesModel} from "../model";
 
 export class GamesService {
@@ -9,7 +9,7 @@ export class GamesService {
    * Create game
    * @param params
    */
-  protected async createGame (params: CreateGameDTO): Promise<object> {
+  protected async createGame(params: CreateGameDTO): Promise<object> {
     try {
       const game = new GamesModel({
         player1Name: params.player1Name,
@@ -34,7 +34,7 @@ export class GamesService {
   /**
    * Find games
    */
-  protected findGames () {
-    return GamesModel.find();
+  protected findGames() {
+    return GamesModel.find(null, null, {sort: {'_id': -1}});
   }
 }

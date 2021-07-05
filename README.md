@@ -10,6 +10,22 @@ language: nodeJS
 Questo è il progetto dell'applicazione BackEnd Rest API della app Learnn Game. E' sviluppata con il framework Serverless Framework e TypeScript. 
 Il database utilizzato è un non relazionale MongoDB hostato su MongoDB Atlas.
 
+# Continuous Delivery
+Per il CD è impostata un'automazione su seed.run che effettua il deploy del progetto
+su AWS in base al ramo git su cui viene effettuato il push:
+- Se viene effettuato un push sul ramo git 'main', seed.run automaticamente avvia
+  il processo di deploy su AWS nell'ambiente di sviluppo tramite il comando
+```bash
+sls deploy --stage dev
+```
+- Se viene effettuato un push sul ramo git 'master', seed.run automaticamente avvia
+  il processo di deploy su AWS nell'ambiente di produzione tramite il comando
+```bash
+sls deploy --stage prod
+```
+In questo modo si hanno due ambienti sepatari del BackEnd che si collega a due database MongoDB differenti (utilizzando le variabili d'ambiente).
+
+
 ## Invoke the function locally
 
 ```bash
