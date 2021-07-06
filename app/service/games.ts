@@ -17,9 +17,6 @@ export class GamesService {
         player1Score: params.player1Score,
         player2Score: params.player2Score,
       });
-
-      console.log(game);
-
       const result = await game.save();
 
       return result;

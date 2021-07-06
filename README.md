@@ -1,10 +1,3 @@
-<!--
-title: 'Learnn Game Serverless Nodejs Rest API with TypeScript And MongoDB Atlas'
-layout: Doc
-framework: v1
-platform: AWS
-language: nodeJS
--->
 # Serverless Nodejs Rest API with TypeScript And MongoDB Atlas
 
 Questo è il progetto dell'applicazione BackEnd Rest API della app Learnn Game. E' sviluppata con il framework Serverless Framework e TypeScript. 
